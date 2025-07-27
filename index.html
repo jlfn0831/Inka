@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die Inkas – Zeitreise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&family=Playpen+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+<!-- GSAP & Plugins -->
+<script src="gsap/gsap.min.js"></script>
+<script src="gsap/ScrollTrigger.min.js"></script>
+<script src="gsap/ScrollToPlugin.min.js"></script>
+<script src="gsap/SplitText.min.js"></script>
+<script src="gsap/MorphSVGPlugin.min.js"></script>
+<script src="gsap/DrawSVGPlugin.min.js"></script>
+
+</head>
+
+
+<body>
+
+<header class="main-header">
+  <div class="logo">
+    <img src="Illus/Logo.svg" alt="Logo">
+  </div>
+
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Die Inkas</a></li>
+      <li><a href="Lebensweise/Lebesnweise.html">Lebensweise</a></li>
+      <li><a href="Spiritualität/Spiritualität.html">Spiritualität</a></li>
+      <li><a href="Erbe/Erbe.html">Erbe</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<div class="kapitel-nav">
+  <div class="dot dot-kapitel0" data-target="#intro"></div>
+  <div class="dot dot-kapitel1" data-target="#kapitel1"></div>
+  <div class="dot dot-kapitel15" data-target="#kapitel15"></div>
+  <div class="dot dot-kapitel25" data-target="#kapitel25"></div>
+  <div class="dot dot-kapitel5" data-target="#kapitel5"></div>
+  <div class="dot dot-kapitel55" data-target="#kapitel55"></div>
+  <div class="dot dot-kapitel65" data-target="#kapitel65"></div>
+  <div class="dot dot-mehr" data-target="#mehr-inkas"></div>
+</div>
+
+ 
+
+<!-- Kapitel 0: Nutzeranweisung -->
+<section class="section intro" id="intro">
+  <!-- Intro-Text mittig -->
+  <div class="intro-text">
+    <h1>Eine Zeitreise durch das Inka-Reich</h1>
+    <p>
+      Diese Website führt dich durch Mythen, Herrscher und historische Wendepunkte der Inka.
+      Beim Scrollen entfaltet sich ein visuelles und erzählerisches Erlebnis, das auf Quellen und Legenden basiert.
+    </p>
+    <p>
+      Die Geschichte der Inka zeigt nicht nur den Aufstieg und Fall eines mächtigen Andenreichs –
+      sie eröffnet auch einen Blick auf Weltbilder, Werte und Entwicklungen, die weit über Südamerika hinaus Bedeutung haben.
+    </p>
+    <p>
+      Indem wir ihre Geschichte verstehen, erkennen wir auch, wie kulturelles Wissen entsteht, verloren geht – und bewahrt werden kann.
+    </p>
+  </div>
+<!-- SVG-Linie im Hintergrund -->
+<div class="intro-line">
+  <svg viewBox="0 0 1800 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#FEE600" />
+        <stop offset="100%" stop-color="#FEE600" />
+      </linearGradient>
+    </defs>
+    <!-- Gelbe Hauptlinie -->
+    <g transform="scale(1) translate(0, 0)">
+<!-- Gelbe Hauptlinie -->
+<path
+  id="intro-line-yellow"
+  d="M 150 110
+     C 500 380, 1100 80, 1400 300,
+     S 1800 600, 900 700"
+  stroke="url(#strokeGradient)"
+  stroke-width="24"
+  fill="none"
+  stroke-linecap="round"
+/>
+<!-- Schwarze, dünne Linie leicht versetzt -->
+<path
+  id="intro-line-black"
+  d="M 120 105
+     C 500 375, 1100 15, 1400 295
+     S 1800 495, 900 695"
+  stroke="#000"
+  stroke-width="2"
+  fill="none"
+  stroke-linecap="round"
+/>
+    </g>
+  </svg>
+</div>
+  <!-- Scroll-Hinweis immer unten -->
+  <div class="scroll-area">
+    <p class="scroll-hint">Scroll runter und erfahre mehr über die Inkas</p>
+    <div class="arrow">&#8595;</div>
+  </div>
+</section>
+
+
+<section class="section timeline" id="kapitel1">
+  <div class="gradient-overlay"></div>
+  <div class="timer-wrapper">
+    <h2 class="heading">Reisen wir in die Vergangenheit</h2>
+    <p class="subtitle">Zu der Zeit, als die Geschichte der Inka begann …</p>
+    <div class="timer" id="timer">2015</div>
+    <p class="final-text">Die Geschichte der Inka beginnt …</p>
+  </div>
+</section>
+
+
+<section class="section kapitel15" id="kapitel15">
+  <div class="kapitel15-wrapper">
+    
+    <!-- Illu links -->
+    <div class="kapitel15-illu">
+      <img src="Illus/K2_h.svg" alt="Hintergrund Illustration" class="illu-bg">
+      <img src="Illus/K2_v.svg" alt="Vordergrund Illustration" class="illu-vg">
+    </div>
+    
+    <!-- Text rechts -->
+    <div class="kapitel15-textbox">
+      <h2 class="kapitel15-heading">Der Ursprung der Inka</h2>
+      <p class="kapitel15-text">
+        Die Inka glaubten, dass ihre Herrscher vom Sonnengott Inti abstammten – eine göttliche Herkunft, die ihnen Macht, Würde und Ansehen verlieh.
+      </p>
+      <p class="kapitel15-text">
+        Ihr Ursprung ist von geheimnisvollen Legenden umwoben. Einige erzählen vom heiligen Titicacasee, andere von einer verborgenen Höhle bei Cusco.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+<section class="section kapitel2" id="kapitel2">
+  <div class="kapitel2-wrapper">
+
+    <!-- 🟡 Morphing SVG Outline -->
+    <div class="morph-container">
+      <svg id="morph-outline" viewBox="0 0 200 200">
+        <path id="morph-path" d="M100,20 A80,80 0 1,1 99,20 Z" fill="none" stroke="transparent" stroke-width="4" />
+
+      </svg>
+    </div>
+
+    <!-- 🖼️ Illu-Container -->
+    <div class="illu-container">
+
+      <!-- Illu 1 mit Mitte + Rand -->
+      <div class="illu-block illu-1">
+        <img src="Illus/K1_I1_rand.svg" class="illu-rand" alt="Rand 1">
+        <img src="Illus/K1_I1_Mitte.svg" class="illu-mitte" alt="Mitte 1">
+      </div>
+
+      <!-- Illu 2, 3, 4 ganz normal -->
+      <img src="Illus/K1_I2.svg" alt="Illustration Abschnitt 2" class="detail-illu illu-2">
+      <img src="Illus/K1_I3.svg" alt="Illustration Abschnitt 3" class="detail-illu illu-3">
+      <img src="Illus/K1_I4.svg" alt="Illustration Abschnitt 4" class="detail-illu illu-4">
+
+    </div>
+
+    <!-- ✍️ Texte -->
+    <div class="text oben-links" id="text-oben">
+      <span id="text-oben-content">Text 1 oben links</span>
+    </div>
+    <div class="text unten-rechts" id="text-unten">
+      <span id="text-unten-content">Text 2 unten rechts</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Kapitel 2.5: Überlieferte Geschichte -->
+<section class="section kapitel25" id="kapitel25">
+  <div class="kapitel25-wrapper">
+    
+    <h2 class="kapitel25-heading">
+      Die Inka – erzählt mit fremder Feder
+    </h2>
+    
+    <p class="kapitel25-text">
+      Über viele Generationen hinweg wurden die Mythen der Inka mündlich bewahrt – weitergegeben in Liedern, Erzählungen und Ritualen.
+    </p>
+
+    <p class="kapitel25-text">
+      Erst im 16. Jahrhundert, mit der Ankunft der Spanier, begannen Chronisten, diese Geschichten geprägt von ihrer eigenen Perspektive aufzuschreiben.
+    </p>
+
+    <p class="kapitel25-text">
+      So beginnt auch die überlieferte Geschichte der Inka-Herrscher – mit Sinchi Roca, dem ersten namentlich bekannten König. Mit ihm nimmt die historische Entwicklung ihren Lauf: vom kleinen Hochlandreich zur mächtigen Andenzivilisation.
+    </p>
+
+    <!-- Info-Button und Box -->
+    <div class="kapitel25-info">
+      <button class="info-button">ℹ️ Info</button>
+      <div class="info-box">
+        <p>
+          Dieser Text liefert weiterführende Informationen zur schriftlichen Überlieferung, den Quellen und der Rolle der Chronisten.
+        </p>
+      </div>
+    </div>
+
+    <img src="Illus/K25.svg" alt="Deko Illu" class="info-illu">
+
+
+  </div>
+</section>
+
+<!-- Kapitel 3: Die ersten Inka-Herrscher -->
+<section class="section kapitel3" id="kapitel3">
+  <div class="kapitel3-wrapper">
+    
+    <!-- Überschrift -->
+    <h2 class="kapitel3-heading">Die ersten Inka-Herrscher</h2>
+
+    <!-- Timeline-Container -->
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <!-- Herrscher-Punkte -->
+      <div class="timeline-track">
+
+        <!-- 1230 – Sinchi Roca -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1230</div>
+          <h3>Sinchi Roca</h3>
+          <p>Der erste historisch belegte Inka-König, Sohn des legendären Manco Cápac. Er soll erste staatliche Strukturen in Cusco aufgebaut haben.</p>
+        </div>
+
+        <!-- 1260 – Lloque Yupanqui -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1260</div>
+          <h3>Lloque Yupanqui</h3>
+          <p>Galt als ruhiger Herrscher. Er stärkte die Kontrolle über das Umland von Cusco.</p>
+        </div>
+
+        <!-- 1290 – Mayta Cápac -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1290</div>
+          <h3>Mayta Cápac</h3>
+          <p>Ein militärisch aktiver Inka, der erste größere Eroberungen unternahm. Seine Herrschaft festigte den Einfluss der Inka in den Anden.</p>
+        </div>
+
+        <!-- 1320 – Cápac Yupanqui -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1320</div>
+          <h3>Cápac Yupanqui</h3>
+          <p>Bekannt für militärische Feldzüge, allerdings ohne glaubhafte Gebietserweiterung. Starb vermutlich bei einem gescheiterten Kriegszug.</p>
+        </div>
+
+        <!-- 1350 – Inca Roca -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1350</div>
+          <h3>Inca Roca</h3>
+          <p>Verlegte den Regierungssitz innerhalb Cuscos und führte Bildung für Adlige ein. Festigte das politische Zentrum.</p>
+        </div>
+
+        <!-- 1380 – Yahuar Huacac -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1380</div>
+          <h3>Yahuar Huacac</h3>
+          <p>Wurde als Kind entführt und später zurückgekehrt – laut Legende weinte er Blut. Seine Herrschaft war von internen Konflikten geprägt.</p>
+        </div>
+
+        <!-- 1400 – Viracocha Inca -->
+        <div class="timeline-item">
+          <div class="circle" data-tooltip="Platzhalter">1400</div>
+          <h3>Viracocha Inca</h3>
+          <p>Erweiterte das Reich deutlich, musste aber vor dem Chanka-Angriff fliehen. Sein Sohn Pachacútec übernahm in der Krise die Führung.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kapitel 4: Übergang zur Expansion -->
+<section class="section kapitel4" id="kapitel4">
+  <div class="kapitel4-wrapper">
+    
+    <!-- Illustration links -->
+    <div class="kapitel4-illu">
+      <img src="Illus/K4_1.svg" alt="Illustration Aufstieg zur Großmacht">
+    </div>
+
+    <!-- Textblock rechts -->
+    <div class="kapitel4-textblock">
+      <h2 class="kapitel4-heading">
+        Aufstieg zur Großmacht
+      </h2>
+      
+      <p class="kapitel4-text">
+        Mit der Konsolidierung der Herrschaft und wachsendem Einfluss über benachbarte Regionen begannen die Inka, ihr Reich systematisch auszudehnen.
+      </p>
+
+      <p class="kapitel4-text">
+        Diese Expansion war nicht nur militärisch, sondern auch kulturell geprägt – durch Bündnisse, Infrastrukturprojekte und religiöse Integration.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="kapitel5" id="kapitel5" >
+  <!-- Panel 1: Pachacutec -->
+  <div class="panel">
+    <div class="illu left">
+      <img src="Illus/K5I1.svg" alt="Pachacutec Illustration">
+      <p><small>ca. 1438–1471</small></p>
+    </div>
+    <div class="text">
+      <h3>Pachacutec</h3>
+      <p>Pachacutec gilt als Begründer des Inka-Imperiums. Er organisierte den Staat neu, schuf Verwaltungsstrukturen und ließ Cusco ausbauen.</p>
+      <p>Er war ein strategischer Herrscher mit einer Vision. Unter seiner Herrschaft begann die große Expansion des Inka-Reiches.</p>
+    </div>
+  </div>
+
+  <!-- Panel 2: Túpac Yupanqui (rechtsbündiger Text) -->
+  <div class="panel">
+    <div class="text right-align">
+      <h3>Túpac Yupanqui</h3>
+      <p>Túpac Yupanqui war der Sohn Pachacutecs und setzte die Expansion in Richtung Norden und Süden fort.</p>
+      <p>Er gilt als einer der bedeutendsten Feldherren der Inka und führte Expeditionen bis nach Ecuador und Chile.</p>
+    </div>
+    <div class="illu right">
+      <img src="Illus/K5I2.svg" alt="Túpac Yupanqui Illustration">
+      <p><small>ca. 1471–1493</small></p>
+    </div>
+  </div>
+
+  <!-- Panel 3: Huayna Cápac -->
+  <div class="panel">
+    <div class="illu left">
+      <img src="Illus/K5I3.svg" alt="Huayna Cápac Illustration">
+      <p><small>ca. 1493–1525</small></p>
+    </div>
+    <div class="text">
+      <h3>Huayna Cápac</h3>
+      <p>Huayna Cápac führte das Reich zu seiner größten territorialen Ausdehnung. Doch sein Tod führte zu einem Bürgerkrieg.</p>
+      <p>Die Machtkämpfe schwächten das Reich – genau zu jener Zeit, als die Spanier eintrafen.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="kapitel5-5">
+  <div class="kapitel55-wrapper">
+    <!-- Textblock links -->
+    <div class="kapitel55-textblock">
+      <h2 class="kapitel55-heading">
+        Die Spaltung des Inka-Reiches
+      </h2>
+      <p class="kapitel55-text">
+        Am Ende seiner Herrschaft reichte das Inka-Reich von Kolumbien bis nach Zentralchile.
+      </p>
+      <p class="kapitel55-text">
+        Doch nach seinem Tod entbrannte ein Erbfolgekonflikt zwischen seinen Söhnen Huáscar und Atahualpa, der das Reich spaltete.
+      </p>
+    </div>
+
+    <!-- Illustration rechts -->
+    <div class="kapitel55-illu">
+      <img src="Illus/K55_1.svg" alt="Illustration Spaltung des Inka-Reichs">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Kapitel 6: Mythische Bilder im Wandel -->
+<section class="section kapitel6" id="kapitel6">
+  <div class="kapitel6-wrapper">
+
+    <!-- Bildbereich mit drei SVGs -->
+    <div class="illu-wrapper">
+      <img src="Illus/K6_I1.svg" alt="Illustration 1" class="illu kapitel6-illu illu-1">
+      <img src="Illus/K6_I2.svg" alt="Illustration 2" class="illu kapitel6-illu illu-2">
+      <img src="Illus/K6_I3.svg" alt="Illustration 3" class="illu kapitel6-illu illu-3">
+    </div>
+
+    <!-- Überschrift -->
+    <h2 class="kapitel6-heading">
+      Der Bürgerkrieg 
+    </h2>
+
+    <!-- Fließtext mit drei Abschnitten, die nacheinander erscheinen -->
+    <div class="kapitel6-text">
+      <p class="text-block">
+        Nach dem Tod Huayna Cápacs erhoben zwei seiner Söhne Anspruch auf die Nachfolge: Huáscar, der vom Adel in Cusco unterstützt wurde, und Atahualpa, der im Norden starke militärische Rückendeckung hatte.
+      </p>
+      <p class="text-block">
+        Was als dynastischer Streit begann, entwickelte sich schnell zu einem blutigen Bürgerkrieg, in dem sich Atahualpa mit Hilfe seiner erfahrenen Generäle durchsetzen konnte.
+      </p>
+      <p class="text-block">
+        Huáscar wurde gefangen genommen und später auf Befehl Atahualpas hingerichtet. Doch der Sieg kam zu spät: Noch während Atahualpa die Macht festigte, trafen die ersten Spanier ein und nutzten die Schwäche des zerrissenen Reiches zu ihrem Vorteil.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Kapitel 6.5: Übergang zu den Spaniern -->
+<section class="section kapitel65" id="kapitel65">
+  <div class="kapitel65-wrapper">
+    <p class="kapitel65-text">Doch der Sieg kam zu spät...</p>
+    <p class="kapitel65-text">Noch während Atahualpa die Macht festigte, trafen die ersten Spanier ein.</p>
+    <p class="kapitel65-text">Sie trafen auf ein durch den Bürgerkrieg zerspaltenes Land.</p>
+  </div>
+</section>
+
+
+<!-- Kapitel 7: Ankunft der Spanier -->
+<section class="section kapitel7" id="kapitel7">
+
+  <!-- GRUPPE 1: Block 1 + Block 2 -->
+  <div class="kapitel7-group">
+    <!-- Block 1 -->
+    <div class="kapitel7-block">
+      <div class="image-container from-left">
+        <img src="Illus/K7_I1.svg" alt="Ankunft der Spanier">
+      </div>
+      <div class="text-container from-right">
+        <h3>Die Ankunft der Spanier</h3>
+        <p>1532 erreichten die Spanier unter Francisco Pizarro die Küste des heutigen Peru.
+          Sie trafen auf ein vom Bruderkrieg geschwächtes Reich und erkannten die Gelegenheit,
+          die Machtverhältnisse zu ihren Gunsten zu nutzen.</p>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="kapitel7-block">
+      <div class="text-container from-left">
+        <h3>Die Gefangennahme Atahualpas</h3>
+        <p>Bei einem Treffen in Cajamarca wurde Atahualpa trotz eines Friedensangebots von den Spaniern gefangen genommen.
+          Er bot ein riesiges Lösegeld – doch sie ließen ihn dennoch hinrichten.</p>
+      </div>
+      <div class="image-container from-right">
+        <img src="Illus/K7_I2.svg" alt="Gefangennahme Atahualpa">
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPPE 2: Block 3 + Block 4 -->
+  <div class="kapitel7-group">
+    <!-- Block 3 -->
+    <div class="kapitel7-block">
+      <div class="image-container from-left">
+        <img src="Illus/K7_I3.svg" alt="Spanische Strategie">
+      </div>
+      <div class="text-container from-right">
+        <h3>Strategie der Eroberung</h3>
+        <p>Die Spanier nutzten diplomatische List, Feuerwaffen und die Unkenntnis der Inka über europäische Taktiken,
+          um sich Schritt für Schritt Kontrolle über das Land zu verschaffen.</p>
+      </div>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="kapitel7-block">
+      <div class="text-container from-left">
+        <h3>Das Ende des Inka-Reiches</h3>
+        <p>Nach Atahualpas Tod errichteten die Spanier eine Marionettenherrschaft.
+          Der letzte Inka, Túpac Amaru, wurde 1572 hingerichtet – das Ende des einst größten Reiches Südamerikas.</p>
+      </div>
+      <div class="image-container from-right">
+        <img src="Illus/K7_I4.svg" alt="Das Ende der Inka">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="mehr-inkas" id="mehr-inkas">
+  <div class="content">
+    <p>Mehr zu den Inkas findest du hier</p>
+    <div class="kreis-container">
+
+      <a href="Lebensweise/Lebensweise.html" class="kreis-block">
+        <div class="kreis">
+          <img src="Illus/Quipus.svg" alt="Lebensweise Illustration" />
+        </div>
+        <span>Lebensweise</span>
+      </a>
+
+      <a href="Spiritualität/Spiritualität.html" class="kreis-block">
+        <div class="kreis">
+          <img src="Illus/Andenkreuz.svg" alt="Spiritualität Illustration" />
+        </div>
+        <span>Spiritualität</span>
+      </a>
+
+      <a href="Erbe/Erbe.html" class="kreis-block">
+        <div class="kreis">
+          <img src="Illus/Footprints.svg" alt="Erbe Bild" />
+        </div>
+        <span>Erbe</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-left">Die Inkas</div>
+  <div class="footer-center">
+    <a href="Rechtliches/impressum.html">Impressum</a>
+    <a href="Rechtliches/Datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="footer-right">©2025 | Alle Rechte vorbehalten</div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

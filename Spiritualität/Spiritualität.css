@@ -1,0 +1,1003 @@
+/* ==================== Grundsetup ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Nanum Gothic', sans-serif;
+  overflow-x: hidden;
+  background-color: #fef5e7;
+  color: #000;
+  position: relative;
+}
+
+/* ==================== Allgemeines Section-Layout ==================== */
+section {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 6rem 0; /* Weniger Padding seitlich */
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+  scroll-margin-top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ==================== Allgemeines Panel-Layout ==================== */
+.panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px; /* Größer als vorher (z. B. 1400px) */
+  margin: 0 auto;
+  padding: 0 2rem; /* Weniger als 10vw */
+}
+
+/* ==================== Speziell für Kapitel 2 ==================== */
+#kapitel2 {
+  padding: 6rem 0; /* Weniger Platz links/rechts */
+}
+
+#kapitel2.panel {
+  max-width: 1600px; /* Breiter zulassen */
+  padding: 0 2rem;
+}
+
+#kapitel2 .illu {
+  flex: 0 0 45%; /* Illustration nimmt ca. 45% ein */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#kapitel2 .text {
+  flex: 1 1 55%; /* Text nimmt den restlichen Platz ein */
+  padding-left: 1rem;
+}
+
+#kapitel2 .illu-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+}
+
+#kapitel2 .illu-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ==================== Header ==================== */
+.main-header {
+  width: 100%;
+  height: 3.1rem;
+  background-color: #333;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.logo img {
+  height: 2.8rem;
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-list {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+}
+
+.nav-list li a {
+  color: #FFFAF5;
+  text-decoration: none;
+  font-family: 'Playpen Sans', cursive;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-list li a:hover {
+  opacity: 0.7;
+}
+
+/* ==================== Text ==================== */
+h1, h2, h3 {
+  font-family: 'Playpen Sans', cursive;
+  line-height: 1.2;
+  color: #000;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 650;
+  padding-bottom: 2.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.text p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000;
+}
+
+
+/* ==================== Illu Allgemein ==================== */
+.illu {
+  flex: 1 1 40%; /* mehr Platzanteil */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; /* etwas mehr Abstand außen */
+  position: relative;
+}
+
+.illu img {
+  width: 100%;
+  max-width: 500px;  /* vorher: nicht definiert → jetzt größer */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* ==================== Text Centered ==================== */
+
+.text.centered {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+
+  height: auto;
+}
+
+.text.centered p {
+  padding-bottom: 1rem;
+}
+
+/* Nur die Überschrift zentrieren */
+.text.centered h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+/* ==================== Kapitel 0 ==================== */
+#kapitel0 .intro-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#kapitel0 .intro-text {
+  flex: 1 1 65%;
+  text-align: left;
+  padding-left: 7rem;
+}
+
+#kapitel0 .intro-text h1 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+#kapitel0 .intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+/* Illustration */
+#kapitel0 .intro-illu {
+  flex: 1 1 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-right: 4rem;
+}
+
+#kapitel0 .intro-illu img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#kapitel0 .intro-illu:hover img {
+  transform: scale(1.1);
+}
+
+/* Info-Text bei Hover */
+#kapitel0 .intro-illu .info-text {
+  position: absolute;
+  top: 110%;
+  left: 42%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: normal;
+  max-width: 300px;
+  text-align: center;
+}
+
+#kapitel0 .intro-illu:hover .info-text {
+  opacity: 1;
+}
+
+
+/* ==================== Kapitel 1 ==================== */
+
+/* Kapitel 1 vertikal ausrichten */
+#kapitel1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto; /* nur so hoch wie nötig */
+  padding: 8rem 2rem;
+}
+
+/* Container für Bildreihe */
+.illu-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10rem;
+  row-gap: 2rem;
+  flex-wrap: nowrap;
+  margin-top: 2rem;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+/* Hover-Wrapper für jedes Bild */
+.illu-hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.illu-hover img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
+  transition: transform 0.4s ease;
+}
+
+/* Beim Hover skalieren */
+.illu-hover:hover img {
+  transform: scale(1.1);
+}
+
+.illu-title {   
+  font-family: 'Playpen Sans', cursive;
+  font-size: 1rem;
+  margin-top: 1rem;             /* kleiner Abstand nach oben */
+  text-align: center;
+  opacity: 0;                   /* standardmäßig unsichtbar */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);  /* leicht nach unten versetzt */
+}
+
+.illu-hover:hover .illu-title {
+  opacity: 1;
+  transform: translateY(0);     /* sanft nach oben gleiten */
+}
+
+/* Titel einblenden beim Hover */
+.illu-hover:hover .illu-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==================== Kapitel 2  ==================== */
+
+#kapitel2 .illu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.illu-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* quadratisch, kannst du auch anpassen */
+  max-width: 700px; /* optional zur Begrenzung */
+}
+
+.illu-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.illu-h {
+  animation: floatUpDown 6s ease-in-out infinite; /* langsamer */
+  z-index: 1;
+}
+
+/* Keyframes für das Schweben */
+@keyframes floatUpDown {
+  0%   {
+    transform: translateY(-100px) scale(1);
+  }
+  50%  {
+    transform: translateY(-85px) scale(1.01);
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+  }
+}
+
+
+/* ==================== Kapitel 3  ==================== */
+#kapitel3 .intro-content {
+  display: flex;
+  padding: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+#kapitel3 .intro-text {
+  flex: 1 1 50%;
+  text-align: right;
+  padding-left: 7rem;
+}
+
+
+#kapitel3 .intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+#kapitel3 .intro-text h1 {
+
+  max-width: 80%;
+}
+
+
+#kapitel3 .intro-illu {
+  flex: 1 1 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-right: 8rem;
+}
+
+#kapitel3 .intro-illu img {
+  max-width: 80%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#kapitel3 .intro-illu:hover img {
+  transform: scale(1.1);
+}
+
+/* Info-Text */
+#kapitel3 .intro-illu {
+  position: relative;
+}
+
+#kapitel3 .intro-illu .info-text {
+  position: absolute;
+  top: 110%;
+  left: 42%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+
+  white-space: normal;
+  max-width: 300px;
+  text-align: center;
+}
+
+#kapitel3 .intro-illu:hover .info-text {
+  opacity: 1;
+}
+
+/* ==================== Kapitel 4 ==================== */
+
+
+#kapitel4 {
+  position: relative; /* wichtig für absolute Elemente wie Sterne */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* damit Inhalte untereinander erscheinen */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  background-color: transparent; /* damit Sterne durchscheinen */
+  z-index: 0;
+}
+#kapitel4 {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Sternen-Container */
+#kapitel4 .background-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Einzelner Stern */
+#kapitel4 .star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: blink 3s infinite ease-in-out;
+}
+
+/* Blinken */
+@keyframes blink {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.9; }
+}
+
+
+/* Textinhalt */
+#kapitel4 .text {
+  color: white;
+  z-index: 1;
+  max-width: 900px;
+  margin-bottom: 15rem;
+}
+
+#kapitel4 .text h1,
+#kapitel4 .text p {
+  color: white;
+}
+
+/* Illustration */
+#kapitel4 .illu {
+  z-index: 1;
+  margin: 2rem 0;
+}
+
+#kapitel4 .placeholder-illu {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+/* Optional: sanfte Übergänge für Hintergrund */
+body {
+  transition: background-color 1s, color 1s;
+}
+/* ==================== Kapitel 5 ==================== */
+
+#kapitel5 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  gap: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#kapitel5 .text.left {
+
+  width: 60%;
+  color: white;
+  z-index: 1;
+}
+
+#kapitel5 .illu.right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  z-index: 1;
+}
+
+#kapitel5 .illu.right img {
+  width: 60%;
+  padding-right: 2rem;
+  max-width: 500px; /* Größer als bei Kapitel 8 */
+}
+/* ==================== Kapitel 6 ==================== */
+#kapitel6 {
+  display: flex;
+  flex-direction: column; /* Illustration unter Text */
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#kapitel6 .text {
+  max-width: 70vw; /* Text breiter (statt z. B. 700px) */
+}
+
+
+#kapitel6 .illu {
+  max-width: 90vw;
+  display: flex;
+  justify-content: center;
+}
+
+#kapitel6 .illu img {
+  width: 100%;
+  max-width: 800px; /* absolute Obergrenze */
+  transform: scale(2.5); /* Skalierung erhöht */
+}
+
+/* ==================== Kapitel 7 ==================== */
+#kapitel7 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  gap: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#kapitel7 .text.left {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1;
+}
+
+#kapitel7 .illu.right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#kapitel7 .illu.right img {
+  width: 100%;
+  max-width: 400px;
+  animation: slowRotate 20s linear infinite;
+  transition: transform 0.4s ease, animation-play-state 0.4s;
+}
+
+/* Hover-Effekt: Rotation stoppen + vergrößern */
+#kapitel7 .illu.right img:hover {
+  animation-play-state: paused;
+}
+
+/* Rotation */
+@keyframes slowRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ==================== Kapitel-Dots  ==================== */
+
+.kapitel-nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 9999;
+  pointer-events: auto;
+  padding-left: 10px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.dot.active {
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dot-Farben pro Kapitel */
+.dot-kapitel0.active { background-color: #e74c3c; }
+.dot-kapitel1.active { background-color: #3498db; }
+.dot-kapitel2.active { background-color: #2ecc71; }
+.dot-kapitel3.active { background-color: #f1c40f; }
+.dot-kapitel4.active { background-color: #9b59b6; }
+.dot-kapitel5.active { background-color: #1abc9c; }
+.dot-kapitel6.active { background-color: #e67e22; }
+.dot-kapitel7.active { background-color: #9b59b6; }
+.dot-kapitel8.active { background-color: #1abc9c; }
+.dot-kapitel9.active { background-color: #e74c3c; }
+
+/* Platzhalter-Bild */
+.placeholder-illu {
+  width: 250px;
+  height: 250px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .panel {
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding: 2rem;
+  }
+
+  .illu, .text {
+    max-width: 100%;
+    order: unset;
+  }
+
+  .placeholder-illu {
+    width: 180px;
+    height: 180px;
+  }
+}
+/* ==================== Footer  ==================== */
+/* ==================== Footer  ==================== */
+
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.footer-center a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.footer-center a:hover {
+  opacity: 0.7;
+}
+
+.footer-right {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* ================= Responsive Design ================= */
+@media (max-width: 768px) {
+  /* Basics */
+  html {
+    font-size: 90%;
+  }
+
+  body {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .text {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  section {
+    padding: 6rem 1rem;
+  }
+
+  /* Illu über Text */
+  .illu-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .illu {
+    order: -1;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .illu img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Navigation */
+  .main-header {
+    height: 4rem;
+    padding: 0.6rem 0;
+  }
+
+  .nav-list {
+    gap: 2rem;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .nav-list li a {
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-family: 'Patrick Hand', cursive;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .nav-list li a:hover {
+    opacity: 0.8;
+  }
+
+  /* Hamburger Menü */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 10001;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 95%;
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .text {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .main-header {
+    height: 4.2rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-list {
+    gap: 3rem;
+  }
+
+  .nav-list li a {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 6rem 2rem;
+  }
+
+  .illu-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .illu {
+    order: -1;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .illu img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Illu-Reihe */
+  .illu-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .illu-hover {
+    flex: 0 0 auto;
+    text-align: center;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .illu-hover:hover {
+    transform: none !important;
+  }
+
+  .illu-hover img {
+    width: 100px;
+    height: auto;
+  }
+
+  .illu-title {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+}

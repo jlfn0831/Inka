@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die Inkas – Spiritualität</title>
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&family=Playpen+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP & Plugins -->
+<script src="../gsap/gsap.min.js"></script>
+<script src="../gsap/ScrollTrigger.min.js"></script>
+<script src="../gsap/ScrollToPlugin.min.js"></script>
+<script src="../gsap/SplitText.min.js"></script>
+<script src="../gsap/MorphSVGPlugin.min.js"></script>
+<script src="../gsap/DrawSVGPlugin.min.js"></script>
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="spiritualität.css" />
+</head>
+
+<body>
+
+<main>
+
+<header class="main-header">
+  <div class="logo">
+    <img src="../Illus/Logo.svg" alt="Logo">
+  </div>
+
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="../index.html">Die Inkas</a></li>
+      <li><a href="../Lebensweise/Lebesnweise.html">Lebensweise</a></li>
+      <li><a href="../Spiritualität/Spiritualität.html">Spiritualität</a></li>
+      <li><a href="../Erbe/Erbe.html">Erbe</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+
+<!-- Kapitel-Dots -->
+<div class="kapitel-nav">
+  <div class="dot dot-kapitel0" data-target="#kapitel0"></div>
+  <div class="dot dot-kapitel1" data-target="#kapitel1"></div>
+  <div class="dot dot-kapitel2" data-target="#kapitel2"></div>
+  <div class="dot dot-kapitel3" data-target="#kapitel3"></div>
+  <div class="dot dot-kapitel4" data-target="#kapitel4"></div>
+  <div class="dot dot-kapitel5" data-target="#kapitel5"></div>
+  <div class="dot dot-kapitel6" data-target="#kapitel6"></div>
+  <div class="dot dot-kapitel7" data-target="#kapitel7"></div>
+</div>
+
+<!-- Intro -->
+<section class="intro" id="kapitel0">
+  <div class="intro-content">
+    <div class="intro-text">
+      <h1>Spiritualität (Glaube, Rituale, Weltbild)</h1>
+      <p>Spiritualität spielte im Leben der Inka eine zentrale Rolle.</p>
+      <p>Sie sahen sich als Teil eines größeren Ganzen – verbunden mit der Natur, den Ahnen und den Himmelskörpern. Rituale, Feste und Sternbeobachtungen waren für sie nicht nur Tradition, sondern Ausdruck einer tiefen spirituellen Welt, in der alles miteinander verwoben war.</p>
+    </div>
+    <div class="intro-illu">
+      <img src="../Illus/Andenkreuz.svg" alt="Inka Symbol">
+      <div class="info-text">Das Andenkreuz (Chakana) symbolisiert die Verbindung von Himmel, Erde und Unterwelt – genutzt von den Inka und anderen Andenvölkern.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Panels -->
+<section class="panel" id="kapitel1">
+  <div class="text left">
+    <h1>Die Drei-Welten-Lehre der Inka</h1>
+    <p>Das Weltbild der Inka war in drei Ebenen gegliedert, die alles Leben miteinander verbanden. Ganz oben befand sich Hanan Pacha, die Oberwelt. Hier lebten die Götter, 
+      allen voran Inti, der Sonnengott, sowie der Mond, die Sterne und andere Himmelswesen. Diese Welt stand für Licht, Spiritualität und das Göttliche.</p>
+    <p>In der Mitte lag Kay Pacha, die Welt der Menschen. Sie umfasste alles, was man im Alltag sah und spürte: Menschen, Tiere, Pflanzen, 
+      Flüsse und Berge. Es war die Welt, in der die Inka lebten, arbeiteten und ihre Rituale durchführten.</p>
+    <p>Unter der Erde befand sich Uku Pacha, die Unterwelt. Sie war der Ort der Ahnen, der geheimen Kräfte und der Fruchtbarkeit. Aus ihr kam neues Leben, aber sie 
+        stand auch für Dunkelheit und das Unbekannte. Höhlen, Quellen und Seen galten als Eingänge zu dieser Welt.</p>
+    <p>Für die Inka war es wichtig, dass diese drei Welten im Gleichgewicht blieben. Zeremonien, Opfergaben und Feste sollten helfen, Harmonie zwischen Oberwelt, Menschenwelt und Unterwelt zu bewahren.</p>
+  </div>
+
+  <div class="illu-row">
+    <div class="illu-hover">
+      <img src="../Illus/unterwel.svg" alt="Ukhu Pacha">
+      <span class="illu-title">Unterwelt</span>
+    </div>
+    <div class="illu-hover">
+      <img src="../Illus/Mittelwelt.svg" alt="Kay Pacha">
+      <span class="illu-title">Kay Pacha</span>
+    </div>
+    <div class="illu-hover">
+      <img src="../Illus/oberwelt.svg" alt="Hanan Pacha">
+      <span class="illu-title">Hanan Pacha</span>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="kapitel2">
+  <div class="illu left">
+    <div class="illu-wrapper">
+      <img src="../Illus/PatchaMama_H.svg" alt="Naturgötter Illustration" class="illu-h">
+      <img src="../Illus/PatchaMama_V.svg" alt="Naturgötter Illustration" class="illu-v">
+    </div>
+  </div>
+  <div class="text right">
+    <h1>Die Naturgötter der Inka</h1>
+    <p>Die Inka glaubten an viele Götter, die eng mit der Natur verbunden waren. Besonders wichtig war Inti, der Sonnengott. 
+      Er galt als Ursprung allen Lebens, schenkte Licht, Wärme und sicherte reiche Ernten. Zu seinen Ehren wurde jedes Jahr das 
+      große Sonnenfest Inti Raymi gefeiert.</p>
+    <p>Ebenso verehrten die Inka Pachamama, die Mutter Erde. Sie versorgte die Menschen mit Nahrung und Lebensgrundlage, 
+      weshalb ihr regelmäßig Opfergaben dargebracht wurden, meist kleine Gaben wie Koka-Blätter oder Mais, direkt in die Erde vergraben.</p>
+    <p>Für die Inka begann alles mit Viracocha, dem großen Schöpfergott. Er erschuf Himmel, Erde und die Menschen, brachte Ordnung in die Welt 
+      und seine Kraft blieb in Natur und Leben überall spürbar. Für das Inka Volk war die Natur voller Leben, Sonne, Erde und Schöpfung waren 
+      heilig und tief mit ihrem Alltag verbunden.</p>
+  </div>
+</section>
+
+
+<section class="intro" id="kapitel3">
+  <div class="intro-content">
+    <div class="intro-text">
+      <h1>Lamas als heilige Tiere</h1>
+      <p>Für die Inka waren Lamas viel mehr als nur praktische Lastentiere. Sie galten als heilige Tiere, die Glück und Wohlstand bringen sollten. 
+      Lamas spielten bei Festen und religiösen Zeremonien eine wichtige Rolle. Besonders bei großen Feiern für Pachamama, die Mutter Erde, 
+      wurden Lamas geopfert, damit die Erde fruchtbar blieb und die Ernten gut ausfielen.</p>
+      <p>Neben Lamas wurden auch Alpakas und Meerschweinchen verehrt, da sie Nahrung, Wolle oder wichtige Gaben für die Götter lieferten. 
+      Im Alltag waren Lamas unverzichtbar und gleichzeitig ein lebendiger Teil der spirituellen Welt der Inka.</p>
+    </div>
+    <div class="intro-illu">
+      <img src="../Illus/Lama.svg" alt="Lama">
+      <div class="info-text">Lamas galten als heilige Tiere und wurden für Pachamama geopfert, um Fruchtbarkeit und gute Ernten zu sichern.</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="panel" id="kapitel4">
+  <div class="background-stars">
+    <!-- Sterne werden per JS erzeugt -->
+  </div>
+  
+  <div class="text right">
+    <h1>Himmel und Sterne bestimmten den Alltag</h1>
+    <p>Für die Inka war der Himmel ein wichtiger Teil ihres Lebens, sowohl praktisch als auch spirituell. Sie beobachteten Sonne, Mond und Sterne sehr genau, 
+      um zu wissen, wann sie säen, ernten und Feste feiern mussten. Besonders bedeutend war die Milchstraße, die sie Mayu, den himmlischen Fluss, nannten. 
+      Sie glaubten, dass dieser Fluss mit dem Wasser auf der Erde verbunden war und sogar die Seelen der Verstorbenen entlang dieses Weges reisten.</p>
+    <p>Neben den klassischen Sternbildern achteten die Inka auch auf besondere Formen in den dunklen Bereichen der Milchstraße, die sogenannten Dunkelwolkenbilder. 
+      Dort erkannten sie zum Beispiel ein Lama oder einen Fuchs. Diese Bilder zeigten ihnen, wann Regenzeiten bevorstanden oder wann es Zeit für Erntearbeiten war.</p>
+    <p>Der Himmel war für die Inka mehr als nur eine Orientierungshilfe. Er war ein Teil ihrer spirituellen Welt, verband Erde und Kosmos und zeigte ihnen, 
+      wie man im Einklang mit der Natur lebt.</p>
+  </div>
+
+  <div class="text right">
+    <h1>Priester und Orakel</h1>
+    <p>Bei den Inka hatten Priester eine große Bedeutung. Sie galten als Mittler zwischen den Menschen und den Göttern und beeinflussten wichtige Entscheidungen im Reich. 
+    Oft befragten sie das Coca-Blätter-Orakel, bei dem die Anordnung der Blätter Hinweise auf den Willen der Götter geben sollte. Auch Tieropfer waren verbreitet, 
+    besonders Lamas und Meerschweinchen. Die Priester deuteten zum Beispiel die Organe der Tiere, um Vorzeichen für gute oder schlechte Zeiten zu erkennen.</p>
+    <p>Es gab verschiedene Priester mit unterschiedlichen Aufgaben. An der Spitze stand der Willaq Umu, der Hohepriester der Sonne, der auch bei politischen 
+    Entscheidungen ein Wort mitsprach. Neben den männlichen Priestern gab es auch Mama Kuna, Priesterinnen, die bei bestimmten Ritualen eine wichtige Rolle 
+    spielten, vor allem bei Zeremonien für Fruchtbarkeit, Pachamama oder den Mond. Für die Inka war es wichtig, den Willen der Götter richtig zu deuten, 
+    denn davon hing das Wohlergehen des Volkes ab.</p>
+  </div>
+
+</section>
+
+
+<section class="panel" id="kapitel5">
+    <div class="illu right"><img src="../Illus/MamaCoca.svg" alt="Mama Coca"></div>
+  <div class="text left">
+    <h1>Mama Coca – Die heilige Pflanze</h1>
+    <p>Für die Inka war die Coca-Pflanze viel mehr als nur ein einfaches Gewächs, sie galt als heiliges Geschenk der Natur. Die Blätter wurden bei Ritualen 
+      gekaut oder der Erde als Opfergabe dargebracht, um Pachamama zu ehren. Coca spielte auch eine wichtige Rolle in der Heilkunst der Inka. Sie half bei Schmerzen, 
+      Müdigkeit und Höhenkrankheit, was vor allem in den Bergen von großer Bedeutung war.</p>
+    <p>Besonders die Chaskis, die schnellen Botenläufer des Reiches, nutzten Coca, um auf ihren langen und anstrengenden Laufstrecken Energie und Ausdauer zu bewahren. 
+      Für die Inka war Coca eine heilige Verbindung zwischen Mensch, Natur und den Göttern.</p>
+  </div>
+
+</section>
+
+
+<section class="panel" id="kapitel6">
+
+  <div class="text right"><h1>Heilige Berge – “Apus”</h1>
+    <p>Für die Inka war die Coca-Pflanze viel mehr als nur ein einfaches Gewächs, sie galt als heiliges Geschenk der Natur. Die Blätter wurden bei Ritualen gekaut 
+oder der Erde als Opfergabe dargebracht, um Pachamama zu ehren. Coca spielte auch eine wichtige Rolle in der Heilkunst der Inka. Sie half bei Schmerzen,
+Müdigkeit und Höhenkrankheit, was vor allem in den Bergen von großer Bedeutung war. Besonders die Chaskis, die schnellen Botenläufer des Reiches, nutzten Coca, 
+um auf ihren langen und anstrengenden Laufstrecken Energie und Ausdauer zu bewahren. Für die Inka war Coca eine heilige Verbindung zwischen Mensch, Natur und den 
+Göttern.</p>
+  </div>
+    <div class="illu left"><img src="../Illus/Apus.svg" alt=""></div>
+</section>
+
+<section class="panel" id="kapitel7">
+  <div class="text left">
+    <h1>Musikinstrumente als spirituelle Begleiter</h1>
+    <p>Musik war für die Inka nicht nur Unterhaltung, sondern ein wichtiger Teil ihrer Spiritualität. Flöten, Trommeln und Muschelhörner begleiteten Zeremonien und 
+      Feste und halfen dabei, mit den Göttern in Kontakt zu treten. Besonders bekannt war die Pututu, ein großes Schneckenhorn, das bei Ritualen geblasen wurde, um 
+      die Götter zu rufen oder wichtige Ereignisse anzukündigen. Auch Flöten aus Knochen oder Ton wurden gespielt, oft mit Melodien, die bestimmte Naturkräfte oder 
+      Gottheiten ehrten. Musik war für die Inka ein Mittel, um die Welt der Menschen mit der Welt der Götter zu verbinden.</p>
+  </div>
+  <div class="illu right"><img src="../Illus/Musik.svg" alt="Musik"></div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-left">Die Inkas</div>
+  <div class="footer-center">
+    <a href="../Rechtliches/impressum.html">Impressum</a>
+    <a href="../Rechtliches/Datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="footer-right">©2025 | Alle Rechte vorbehalten</div>
+</footer>
+
+
+</main>
+
+<!-- GSAP & Plugins -->
+<script src="gsap/gsap.min.js"></script>
+<script src="gsap/ScrollTrigger.min.js"></script>
+<script src="gsap/ScrollToPlugin.min.js"></script>
+<script src="gsap/SplitText.min.js"></script>
+<script src="gsap/MorphSVGPlugin.min.js"></script>
+<script src="gsap/DrawSVGPlugin.min.js"></script>
+
+<!-- Dein Script für Farbwechsel -->
+<script src="Spiritualität.js"></script>
+
+</body>
+</html>

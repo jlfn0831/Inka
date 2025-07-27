@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 216.19 208.68">
+  <defs>
+    <clipPath id="clippath">
+      <path d="M104.66,66.29c20.67,0,37.42,16.61,37.42,37.1s-16.75,37.1-37.42,37.1-37.42-16.61-37.42-37.1,16.75-37.1,37.42-37.1ZM216.19,1.84H0v206.85h216.19V1.84Z" style="fill: none;"/>
+    </clipPath>
+  </defs>
+  <g style="clip-path: url(#clippath);">
+    <g>
+      <rect y="61.61" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x="65.01" width="85.8" height="106.39" style="fill: #040505;"/>
+      <rect x="32.6" y="30.43" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x="111.31" y="62.36" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x="65.01" y=".76" width="85.8" height="106.39" style="fill: #040505;"/>
+      <rect x="78.71" y="31.18" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x=".38" y="61.23" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x="65.39" y="102.24" width="85.8" height="106.39" style="fill: #040505;"/>
+      <rect x="32.98" y="92.41" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x="111.69" y="60.47" width="104.5" height="85.8" style="fill: #040505;"/>
+      <rect x="65.39" y="101.48" width="85.8" height="106.39" style="fill: #040505;"/>
+      <rect x="79.09" y="91.65" width="104.5" height="85.8" style="fill: #040505;"/>
+    </g>
+  </g>
+</svg>

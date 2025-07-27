@@ -1,0 +1,1581 @@
+/* Grundlayout */
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  }
+/*
+.section {
+  outline: 2px dashed red;
+}
+*/
+.section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ==================== Allgemeines ==================== */
+
+/* Haupttext: Poppins */
+body {
+  background-color: #fef5e7;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Playpen Sans', cursive;
+  line-height: 1.2;;
+  color: #000000; 
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 650;
+  padding-bottom: 3rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  margin: 0%;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+
+/* ==================== Header ==================== */
+.main-header {
+  width: 100%;
+  background-color: #333;
+  height: 3.1rem;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.logo img {
+  height: 2.8rem;
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-list {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: #FFFAF5;
+  text-decoration: none;
+  font-family: 'Playpen Sans', cursive;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-list li a:hover {
+  opacity: 0.7;
+}
+
+
+/* ==================== Kapitel Punkte ==================== */
+.kapitel-nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 9999;
+  pointer-events: auto;
+  padding-left: 10px; 
+}
+
+/* Allgemeiner Punktstil (inaktiv) */
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Aktiver Punkt */
+.dot.active {
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Aktive Farben je Kapitel */
+.dot-kapitel0.active { background-color: #e74c3c; }
+.dot-kapitel1.active { background-color: #3498db; }
+.dot-kapitel15.active { background-color: #2ecc71; }
+.dot-kapitel25.active { background-color: #f1c40f; }
+.dot-kapitel5.active { background-color: #9b59b6; }
+.dot-kapitel55.active { background-color: #1abc9c; }
+.dot-kapitel65.active { background-color: #e67e22; }
+.dot-mehr.active { background-color: #ff69b4; }
+
+
+/* ==================== Kapitel 0 ==================== */
+.section.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Intro-Text zentriert */
+.intro-text {
+  position: relative;
+  font-weight: 1rem;
+  z-index: 1;
+  max-width: 55rem;
+}
+
+.intro-text p{
+  font-size: 1.1rem;
+}
+
+.intro-text h1 {
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+  padding-bottom: 1.8rem;
+}
+
+
+/* Linie im Hintergrund */
+.intro-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.intro-line svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(255, 200, 120, 0.4));
+  transform-origin: center center;
+}
+
+/* Bereich ganz unten */
+.scroll-area {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Scroll-Hinweis */
+.scroll-hint {
+  font-size: 1.3rem;
+  font-family: 'Caveat', cursive;
+  margin-bottom: 0.5rem;
+}
+
+/* Pfeil-Animation */
+.arrow {
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+  transform: scale(1.4);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* ==================== Kapitel 1 ==================== */
+
+#kapitel1 {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.section.timeline {
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animierter Farbverlauf-Overlay */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  background-image: linear-gradient(
+    270deg,
+    rgba(254, 245, 231, 1) 0%,      /* Start: Basisfarbe */
+    rgba(255, 200, 0, 0.4),
+    rgba(255, 50, 0, 0.4),
+    rgba(0, 150, 255, 0.4),
+    rgba(255, 200, 0, 0.4),
+    rgba(254, 245, 231, 1) 100%     /* Ende: wieder Basisfarbe */
+  );
+  background-size: 800% 800%;
+  background-blend-mode: screen;
+  z-index: 1;
+  transition: opacity 1s ease;
+}
+
+/* Overlay wird durch JS sichtbar gemacht */
+.gradient-overlay.active {
+  opacity: 1;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Keyframes für die Farbbewegung */
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Timer-Inhalte */
+
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  max-width: 1000px;
+  padding-bottom: 5%;
+  position: relative;
+  z-index: 2; /* über dem Overlay */
+}
+
+.heading {
+  font-size: 2.5rem;
+  opacity: 0;
+  text-align: left;
+  padding-bottom: 6%;
+}
+
+.subtitle,
+.timer,
+.final-text {
+  text-align: center;
+  align-self: center;
+  opacity: 0;
+  padding: 1%;
+}
+
+.subtitle {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.final-text {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+}
+
+.timer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum"; /* optional ergänzen */
+  letter-spacing: 8rem;
+  color: orange;
+  line-height: 1;
+  text-align: center;
+  padding-left: 11rem;
+  margin: 2rem 0;
+  text-shadow: 0 4px 4px rgba(154, 82, 30, 0.7);
+}
+
+
+
+/* ==================== Kapitel 1.5 ==================== */
+
+.section.kapitel15 {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.kapitel15-wrapper {
+  display: flex;
+  width: 92%;
+  max-width: 1400px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Illu links */
+.kapitel15-illu {
+  width: 48%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Illus übereinander */
+.illu-bg, .illu-vg {
+  position: absolute;
+  width: 70%;
+  height: auto;
+}
+
+/* Nur Rotation */
+.illu-bg {
+  animation: rotate-self 30s linear infinite;
+  z-index: 1;
+  left: 2.5%;
+}
+
+.illu-vg {
+  z-index: 2;
+  left: 15%;
+  scale: 3;
+}
+
+/* Text rechts */
+.kapitel15-textbox {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+/* Keyframe für Rotation */
+@keyframes rotate-self {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== Kapitel 2 ==================== */
+
+.kapitel2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ Zentrierte Wrapper-Box */
+.kapitel2-wrapper {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🟡 Outline + Illus exakt übereinander */
+.morph-container,
+.illu-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* 🟡 Outline liegt unten */
+.morph-container {
+  z-index: 1;
+}
+
+#morph-outline {
+  width: 100%;
+  height: auto;
+}
+
+/* 🖼️ Detaillierte Illus liegt darüber */
+.illu-container {
+  z-index: 2;
+}
+
+/* ✅ Illu 1: Mitte und Rand getrennt */
+.illu-1 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.illu-rand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  transform-origin: center;
+  width: 100%;
+  height: auto;
+}
+
+/* ✅ Mitte bleibt statisch */
+.illu-mitte {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 100%;
+  height: auto;
+}
+
+/* ✅ Illu 2-4 */
+.detail-illu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* ✅ Aktiv sichtbar */
+.illu-1.active,
+.detail-illu.active {
+  opacity: 1;
+}
+
+/* ✍️ Text oben links */
+.text.oben-links {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  color: #222;
+  top: 10%;
+  left: 5%;
+  width: 30%;
+  max-width: 600px;
+  opacity: 1;
+  z-index: 3;
+}
+
+/* ✍️ Text unten rechts */
+.text.unten-rechts {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  text-align: right;
+  color: #222;
+  bottom: 10%;
+  right: 5%;
+  width: 30%;
+  max-width: 600px;
+  opacity: 1;
+  z-index: 3;
+}
+
+/* ==================== Kapitel 2.5 ==================== */
+.section.kapitel25 {
+  justify-content: center;
+}
+
+.kapitel25-wrapper {
+  max-width: 1200px;
+  width: 95%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center; /* vertikal zentrieren */
+  min-height: 70vh; /* besser vh als %, damit Höhe wirklich zählt */
+  box-sizing: border-box;
+}
+
+
+.kapitel25-heading {
+  text-align: left;
+  width:70%;
+}
+
+.kapitel25-text {
+  text-align: left;
+  width:70%;
+}
+
+.kapitel25-info {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+/* Kapitel 25: Info-Button */
+.kapitel25-info {
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+}
+
+.info-button {
+  background-color: #f1c40f;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: #f39c12;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Info-Box rechts neben dem Button */
+.info-box {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  width: 250px;
+  background-color: #fff8dc;
+  color: #000;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Sichtbar und mit Slide-Effekt */
+.info-box.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(10px);
+}
+
+.info-illu {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 180px;
+  height: auto;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.2));
+}
+
+
+/* ==================== Kapitel 3 ==================== */
+.section.kapitel3 {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Wrapper zentriert */
+.kapitel3-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 4rem;
+}
+
+/* Überschrift */
+.kapitel3-heading {
+  margin-bottom: 7rem;
+  z-index: 5;
+}
+
+/* Container für Timeline */
+.timeline-container {
+  width: 90%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 100px;
+
+  /* Sanfte Transparenz an den Seiten */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 70px;
+  height: 0;
+  width: 100%;
+  border-top:3px dashed #000;
+  z-index: 1;
+}
+
+/* Hover-Segmente (zwischen Kreisen) */
+.timeline-segment {
+  position: absolute;
+  top: 70px;
+  height: 4px;
+  background: orange;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.timeline-segment.active {
+  opacity: 1;
+}
+
+/* Laufende Timeline-Spur */
+.timeline-track {
+  display: flex;
+  gap: 300px;
+  position: relative;
+  z-index: 3;
+  transform: translateX(100vw);
+}
+
+/* Einzelne Timeline-Elemente */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-top: 40px;
+
+  /* Sichtbarkeit initial aus */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Kreis mit Jahreszahl + Hover-Effekt */
+.timeline-item .circle {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item .circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+}
+
+/* Beschreibungstext */
+.timeline-item p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #333;
+  width: 200px;
+}
+
+/* Tooltip-Stil für die Kreise */
+.timeline-item .circle {
+  position: relative;
+  cursor: pointer;
+}
+
+.timeline-item .circle::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%; /* über dem Kreis */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.timeline-item .circle:hover::after {
+  opacity: 1;
+}
+
+/* ==================== Kapitel 4 ==================== */
+
+.section.kapitel4 {
+  justify-content: center;
+  padding: 5vh 0;
+  min-height: 100vh;
+}
+
+/* Wrapper übernimmt Flexbox */
+.kapitel4-wrapper {
+  max-width: 1200px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  gap: 10rem; /* großer Abstand Bild ↔ Text */
+  align-items: center; /* vertikal mittig */
+  box-sizing: border-box;
+}
+
+/* Illustration links */
+.kapitel4-illu img {
+  max-width: 500px;
+  width: 120%;
+  height: auto;
+  display: block;
+}
+
+/* Textblock rechts */
+.kapitel4-textblock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rem; /* zusätzlicher Abstand rechts */
+}
+
+/* Überschrift */
+.kapitel4-heading {
+  text-align: left;
+  opacity: 0;
+}
+
+/* Textabsätze */
+.kapitel4-text {
+  text-align: left;
+  opacity: 0;
+  margin-bottom: 1rem;
+}
+
+
+/* ==================== Kapitel 5 ==================== */
+
+#kapitel5 {
+  padding: 0;
+  margin: 0;
+}
+
+/* Jeder Abschnitt nimmt genau 100vh ein */
+.panel {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Elemente weiter auseinander */
+  align-items: center;
+  padding: 0 10vw; /* mehr Abstand zum Rand */
+  box-sizing: border-box;
+  max-width: 1400px; /* mehr Breite erlaubt */
+  margin: 0 auto;
+}
+
+/* Textblock */
+.text {
+  max-width: 30rem;
+  flex: 1;
+}
+
+/* Nur dieser Block ist rechtsbündig */
+.text.right-align {
+  text-align: right;
+}
+
+.text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Illustration */
+.illu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.illu img {
+  max-width: 220px;
+  height: auto;
+}
+
+.illu p small {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  display: block;
+}
+
+/* Text & Bild Positionierung je nach Abschnitt */
+.panel:nth-child(odd) .text {
+  order: 2;
+}
+.panel:nth-child(odd) .illu {
+  order: 1;
+}
+.panel:nth-child(even) .text {
+  order: 1;
+}
+.panel:nth-child(even) .illu {
+  order: 2;
+}
+
+
+/* ===========================================
+   KAPITEL 5,5
+=========================================== */
+
+#kapitel5-5.section {
+  justify-content: center;
+  padding: 5vh 0;
+}
+
+/* Wrapper übernimmt Flexbox */
+.kapitel55-wrapper {
+  max-width: 1200px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  gap: 10rem; /* Abstand zwischen Text und Illu */
+  align-items: center; /* vertikal mittig */
+  box-sizing: border-box;
+}
+
+/* Illustration rechts */
+.kapitel55-illu img {
+  max-width: 500px;
+  width: 150%;
+  height: auto;
+  display: block;
+}
+
+/* Textblock links */
+.kapitel55-textblock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Überschrift */
+.kapitel55-heading {
+  text-align: left;
+  padding-bottom: 6%;
+  margin-bottom: 0%;
+  opacity: 0;
+}
+
+/* Textabsätze */
+.kapitel55-text {
+  text-align: left;
+  opacity: 0;
+  margin: 0.6rem;
+}
+
+/* ===========================================
+   KAPITEL 6
+=========================================== */
+
+.section.kapitel6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Sicherstellt, dass Section sichtbar ist */
+}
+
+/* Wrapper für zentrierte Inhalte */
+.kapitel6-wrapper {
+  max-width: 1200px;
+  width: 95%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Illustrationen-Container */
+.illu-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 3rem;
+}
+
+/* Einzelne Illustrationen */
+.kapitel6-illu {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  width: auto;
+  height: 90%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* Sichtbare Illustration */
+.kapitel6-illu.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Überschrift */
+.kapitel6-heading {
+  text-align: left;
+  opacity: 0;
+}
+
+/* Fließtext-Bereich */
+.kapitel6-text {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #333;
+}
+
+/* Einzelne Textblöcke */
+.kapitel6-text .text-block {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+}
+
+/* ===========================================
+   KAPITEL 6.5 – KULTURELLES ERBE
+=========================================== */
+
+.section.kapitel65 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.kapitel65-wrapper {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.kapitel65-text {
+  font-size: 1.8rem;
+  font-family: 'Caveat', cursive;
+  line-height: 1.8;
+  margin: 3rem 0;
+  opacity: 0;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+
+/* ===========================================
+   KAPITEL 7
+=========================================== */
+
+
+.section.kapitel7 {
+  position: relative;
+  z-index: 1;
+  display: block;
+  text-align: center;
+  padding: 15rem 1rem 15rem;
+  overflow: visible;
+  min-height: 220vh;
+}
+
+.kapitel7-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.kapitel7-text {
+  font-size: 1.6rem;
+  margin: 4rem auto;
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: 40rem;
+}
+
+.kapitel7-group {
+  margin-bottom: 15rem;
+}
+
+.kapitel7-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+  padding: 2rem;
+  gap: 20rem;
+}
+
+.image-container,
+.text-container {
+  max-width: 50rem;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+
+.image-container img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: auto;
+  scale: 110%;
+}
+
+.text-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+/* ===========================================
+   KAPITEL MEHR – WEITERE THEMEN
+=========================================== */
+
+.mehr-inkas {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.mehr-inkas .content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Playpen Sans', cursive;
+}
+
+.mehr-inkas p {
+  font-size: 1.8rem;
+  margin-bottom: 8rem;
+  font-weight: 800;
+}
+
+.kreis-container {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  flex-wrap: wrap;
+}
+
+/* Linkblock – alles klickbar */
+.kreis-block {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  font-family: 'Playpen Sans', cursive;
+}
+
+.kreis-block:hover {
+  transform: scale(1.05);
+}
+
+/* Kreisfläche */
+.kreis {
+  width: 180px;
+  height: 180px;
+  background-color: orange;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Bild/Illustration im Kreis */
+.kreis img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text unter dem Kreis */
+.kreis-block span {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 8rem;
+  font-weight: 500;
+  padding-top: 2.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* Sicherstellen, dass Links nicht unterstrichen sind */
+.kreis-block,
+.kreis-block span {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* ================= Footer ================= */
+
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  /* Neu hinzugefügt */
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+/* Footer-Spalten */
+.footer-left {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+  flex: 1 1 200px; /* responsive */
+}
+
+.footer-center {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.footer-center a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.footer-center a:hover {
+  opacity: 0.7;
+}
+
+.footer-right {
+  font-size: 0.8rem;
+  text-align: right;
+  flex: 1 1 200px;
+}
+
+/* ================= Responsive Design ================= */
+
+
+@media (max-width: 768px) {
+  /* Basics*/
+  html {
+    font-size: 90%; /* Basis-Schriftgröße leicht reduziert */
+  }
+
+  body {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .text {
+    padding: 1rem;
+  }
+
+  .main-header {
+    height: 4rem;
+    padding: 0.6rem 0;
+  }
+
+  .nav-list {
+    gap: 2rem;
+  }
+
+  .nav-list li a {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 6rem 1rem;
+  }
+
+  /* Hamburger Menü*/
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 10001;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animation beim Öffnen */
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .nav-list li a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: 'Patrick Hand', cursive;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .nav-list li a:hover {
+    opacity: 0.8;
+  }
+}
+
+
+/* Kapitel 1.5 */
+@media (max-width: 768px) {
+  .kapitel15-wrapper {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .kapitel15-illu,
+  .kapitel15-textbox {
+    width: 100%;
+    height: auto;
+  }
+
+  .kapitel15-textbox {
+    align-items: center;
+    text-align: center;
+  }
+
+  .kapitel15-heading {
+    font-size: 2.2rem;
+  }
+
+  .kapitel15-text {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* Kapitel 2 */
+@media (max-width: 768px) {
+  .kapitel2-wrapper {
+    width: 90%;
+    height: 90%;
+  }
+
+  .morph-container,
+  .illu-container {
+    width: 40%;
+    max-width: 220px;
+  }
+
+  .text.oben-links,
+  .text.unten-rechts {
+    width: 40%;
+    max-width: 250px;
+    font-size: 1rem;
+  }
+}
+
+/*Kapitel 4*/
+
+@media (max-width: 800px) {
+  .kapitel4-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .kapitel4-illu img {
+    max-width: 80%;
+  }
+
+  .kapitel4-textblock {
+    width: 100%;
+    margin-left: 0;
+  }
+   }
+
+   
+/* Kapitel 5 */
+@media (max-width: 768px) {
+  .panel {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    height: auto;
+  }
+
+  .text, .illu {
+    order: unset;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .illu img {
+    max-width: 160px;
+  }
+}
+
+
+/* Kapitel 5.5 */
+@media (max-width: 800px) {
+  .kapitel55-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .kapitel55-illu img {
+    max-width: 80%;
+  }
+
+  .kapitel55-textblock {
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 95%; /* leicht verkleinert */
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .text {
+    padding: 2rem;
+  }
+
+  .main-header {
+    height: 4.2rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-list {
+    gap: 3rem;
+  }
+
+  .nav-list li a {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 6rem 2rem;
+  }
+}
