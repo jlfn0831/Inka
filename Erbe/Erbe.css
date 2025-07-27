@@ -1,0 +1,1030 @@
+/* ==================== Grundsetup ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #fef5e7;
+  position: relative;
+}
+
+
+section {
+  width: 100%;
+  height: 100vh;
+  font-size: 2rem;
+  color: #000;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 100px;
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4rem; 
+}
+
+/* ==================== Bild & Text Container ==================== */
+.illu,
+.text {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ==================== Bild ==================== */
+.illu {
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.illu img {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 3px solid transparent;
+  transition: border-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.illu img:hover {
+  border-color: #e74c3c;
+  transform: scale(1.05);
+}
+
+/* ==================== Hover-Text im Bild ==================== */
+.illu .hover-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1rem;
+  padding: 0.7rem;
+  opacity: 0;
+  pointer-events: none; /* Klicks gehen durch */
+  transition: opacity 0.3s;
+  text-align: center;
+}
+
+.illu:hover .hover-text {
+  opacity: 1;
+}
+
+/* ==================== Text-Block ==================== */
+
+.text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 2rem;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Nur Überschriften innerhalb von .text */
+.text h1,
+.text h2,
+.text h3 {
+  font-family: 'Playpen Sans', cursive;
+  line-height: 1.2;
+  color: #000;
+}
+
+.text h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.text h2 {
+  font-size: 1.5rem;
+  font-weight: 650;
+  padding-bottom: 3rem;
+}
+
+.text p {
+
+  max-width: 800px;
+  padding-bottom: 1rem;
+}
+
+/* Optional, falls du Texte nach links/rechts ausrichten willst */
+.text.left {
+  padding-left: 5%;
+  padding-right: 0;
+}
+
+.text.right {
+  padding-left: 0;
+  padding-right: 5%;
+}
+
+/* Nur nötig, wenn du flex-Order verwendest */
+.left {
+  order: 1;
+}
+
+.right {
+  order: 2;
+}
+
+/* ==================== Header ==================== */
+.main-header {
+  width: 100%;
+  background-color: #333;
+  height: 3.1rem;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.logo img {
+  height: 2.8rem;
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-list {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: #FFFAF5;
+  text-decoration: none;
+  font-family: 'Playpen Sans', cursive;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-list li a:hover {
+  opacity: 0.7;
+}
+
+
+/* ==================== Dots ==================== */
+
+.kapitel-nav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 90;
+}
+
+/* Standardfarbe der Dots (nicht aktiv) */
+.kapitel-nav .dot {
+  width: 15px;
+  height: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+/* Aktive Farbe je nach Dot-Position */
+.kapitel-nav .dot:nth-child(1).active { background-color: #e74c3c; } /* Rot */
+.kapitel-nav .dot:nth-child(2).active { background-color: #f39c12; } /* Orange */
+.kapitel-nav .dot:nth-child(3).active { background-color: #27ae60; } /* Grün */
+.kapitel-nav .dot:nth-child(4).active { background-color: #2980b9; } /* Blau */
+.kapitel-nav .dot:nth-child(5).active { background-color: #8e44ad; } /* Lila */
+.kapitel-nav .dot:nth-child(6).active { background-color: #16a085; } /* Türkis */
+.kapitel-nav .dot:nth-child(7).active { background-color: #d35400; } /* Dunkelorange */
+.kapitel-nav .dot:nth-child(8).active { background-color: #2c3e50; } /* Dunkelblau */
+.kapitel-nav .dot:nth-child(9).active { background-color: #7f8c8d; } /* Grau */
+.kapitel-nav .dot:nth-child(10).active { background-color: #c0392b; } /* Dunkelrot */
+
+.kapitel-pfeile {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 90;
+}
+
+.kapitel-pfeile .arrow {
+  font-size: 2.5rem;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  user-select: none;
+}
+
+.kapitel-pfeile .arrow:hover {
+  color: #e74c3c;
+  transform: scale(1.2);
+}
+
+/* ==================== Overlay ==================== */
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+.image-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-overlay img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  margin-bottom: 1rem;
+}
+
+.image-overlay .description {
+  color: #fff;
+  font-size: 1.2rem;
+  max-width: 80%;
+  text-align: center;
+  font-family: 'Patrick Hand', cursive;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.close-overlay:hover {
+  opacity: 0.7;
+}
+
+.overlay-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 20px;
+  z-index: 10000;
+  transition: opacity 0.3s;
+}
+
+.overlay-arrow:hover {
+  opacity: 0.7;
+}
+
+.overlay-arrow.left {
+  left: 10px;
+}
+
+.overlay-arrow.right {
+  right: 10px;
+}
+
+/* ==================== Kapitel 0 ==================== */
+
+#kapitel0 {
+  position: relative;
+  overflow: visible;
+}
+
+/* ---------- Intro-Bereich ---------- */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: flex-start;   
+  height: 100vh;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Intro-Textbereich */
+.intro .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 70%;
+  gap: 1rem;
+  margin-left: 5%;
+}
+
+.intro .text h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.intro .text p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  padding: 0%;
+  text-align: left;
+}
+
+/* ---------- Fußspuren ---------- */
+.footstep-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 90%;
+  pointer-events: none;
+}
+
+.footstep {
+  position: absolute;
+  width: 40px;
+}
+
+/* Einzelne Fußspuren mit Position und Rotation */
+.footstep-1 { top: 120px; left: 60%; transform: translateY(30px) rotate(150deg); }
+.footstep-2 { top: 100px; left: 70%; transform: translateY(30px) rotate(130deg); }
+.footstep-3 { top: 300px; left: 70%; transform: translateY(30px) rotate(160deg); }
+.footstep-4 { top: 340px; left: 80%; transform: translateY(30px) rotate(170deg); }
+.footstep-5 { top: 530px; left: 70%; transform: translateY(30px) rotate(180deg); }
+.footstep-6 { top: 620px; left: 80%; transform: translateY(30px) rotate(190deg); }
+.footstep-7 { top: 745px; left: 65%; transform: translateY(30px) rotate(210deg); }
+.footstep-8 { top: 865px; left: 74%; transform: translateY(30px) rotate(215deg); }
+
+/* ==================== Kapitel 1 ==================== */
+#kapitel1 {
+  position: relative; /* Wichtig für das Platzieren des Bildes */
+  overflow: visible;  
+  z-index: 2;
+}
+/* ==================== Kapitel 2 ==================== */ 
+
+#kapitel2 {
+  position: relative; 
+  overflow: hidden;  
+  z-index: 2;
+}
+
+/* Überlappendes Bild am unteren Rand */
+#kapitel2 .overlap-Q {
+  position: absolute;
+  bottom: 75%; 
+  left:8%;
+  transform: translateX(-50%);
+  height: 180px;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ==================== Kapitel 3 ==================== */
+#kapitel3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.trail-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Inhalte über der Linie */
+.illu, .text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional für zusätzliche Kontrolle */
+.trail-path path:first-of-type {
+  stroke: #ff8800;
+  stroke-width: 10;
+}
+
+.trail-path path:last-of-type {
+  stroke: #ffe600;
+  stroke-width: 4;
+  stroke-dasharray: 8 5;
+}
+
+/* ==================== Kapitel 4 ==================== */
+
+
+#kapitel4 {
+  position: relative;
+  overflow: visible;
+}
+
+/* Wrapper für die doppelte Linie */
+.line-wrapper {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 200%; /* doppelt so breit für zwei gleiche Bilder */
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Einzelne Liniengrafik */
+.line-image {
+  height: 110px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* ==================== Kapitel 5 ==================== */
+
+#kapitel5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* Bild links */
+#kapitel5 .illu {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+#kapitel5 .illu img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Text rechts */
+#kapitel5 .text {
+  flex: 1 1 500px;
+  padding-top: 4rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Überschriften in Playpen */
+#kapitel5 .text h2 {
+  font-family: 'Playpen Sans', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+padding-bottom: 2rem;
+  color: #111;
+}
+
+/* Fließtext in Poppins */
+#kapitel5 .text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #222;
+  margin-bottom: 3rem;
+}
+
+
+/* ==================== Kapitel 6 ==================== */
+#kapitel6 {
+  position: relative;
+  overflow: visible; /* ✅ Jetzt kann die Illustration rausgucken */
+}
+
+
+#kapitel6 .grenz-illu {
+  position: absolute;
+  bottom: -32.5%;
+  left: 0;
+  width: 450px; /* je nach Design */
+  height: auto;
+  transform: translateX(-30%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+#kapitel6 .grenz-außen {
+  position: absolute;
+  bottom: -52%;
+  left: 0;
+  width: 800px; /* je nach Design */
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+@keyframes rotateOnPlace {
+  from {
+    transform: translateX(-38%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-38%) rotate(360deg);
+  }
+}
+/* ==================== Kapitel 7 ==================== */
+
+#kapitel8 {
+  position: relative;
+  overflow: hidden;
+}
+
+
+#kapitel8 .illu img {
+  padding: 0px;
+  max-height: 70vh;
+  width: auto;
+}
+
+#kapitel8 .illu,
+#kapitel8 .text {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==================== Kapitel 8 ==================== */
+#kapitel8 {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.svg-markierung svg {
+  width: 100%;           /* Breite */
+  height: 80%;           /* Höhe */
+  position: absolute;
+  top: 100px;
+  left: 480px;
+
+}
+
+
+/* ================= Footer ================= */
+
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.footer-center a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.footer-center a:hover {
+  opacity: 0.7;
+}
+
+.footer-right {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* ================= Responsive Design ================= */
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+
+  body {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+/* Kapitel 5 Textstile wie global */
+#kapitel5 .text h2 {
+  font-family: 'Playpen Sans', cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  padding-bottom: 1rem;
+}
+
+#kapitel5 .text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+  section,
+  .panel {
+    flex-direction: column !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 3rem 1rem;
+    min-height: unset !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Intro soll volle Höhe haben */
+  #kapitel1 {
+    min-height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+  }
+
+  .illu,
+  .text {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    overflow: visible !important;
+    flex: none !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .illu {
+    order: 1 !important;
+    justify-content: center;
+  }
+
+  .text {
+    order: 2 !important;
+    display: block;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .illu img {
+    max-width: 100%;
+    height: auto;
+    pointer-events: none;
+    cursor: default;
+    display: block;
+  }
+
+  /* Kapitel 5 spezifisch */
+  #kapitel5 {
+    flex-direction: column !important;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  #kapitel5 .illu {
+    order: 1 !important;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #kapitel5 .illu img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  #kapitel5 .text {
+    order: 2 !important;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  #kapitel5 .text h2,
+  #kapitel5 .text p {
+    text-align: left;
+  }
+
+  /* KapitelT ausblenden */
+  #kapitelT {
+    display: none !important;
+  }
+
+  /* Animationselemente und Dots ausblenden */
+  .kapitel-nav,
+  .kapitel-pfeile,
+  .footstep-track,
+  .trail-path,
+  .line-wrapper,
+  .grenz-illu,
+  .grenz-außen,
+  .svg-markierung,
+  .image-overlay {
+    display: none !important;
+  }
+
+  /* Navigation */
+  .main-header {
+    height: 4rem;
+    padding: 0.6rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 10001;
+  }
+
+  .hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .nav-list li a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: 'Patrick Hand', cursive;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .nav-list li a:hover {
+    opacity: 0.8;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 90%; /* etwas kleiner als Standard */
+  }
+
+  body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  section,
+  .panel {
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 3rem 1rem;
+    min-height: unset !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .illu,
+  .text {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    overflow: visible !important;
+    flex: none !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .illu {
+    order: 1 !important;
+    justify-content: center;
+  }
+
+  .illu img {
+    max-width: 100%;
+    height: auto;
+    pointer-events: none;
+    cursor: default;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .text {
+    order: 2 !important;
+    display: block;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  #kapitel5,
+  #kapitel6 {
+    flex-direction: column !important;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  #kapitel5 .illu,
+  #kapitel6 .illu {
+    order: 1 !important;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #kapitel5 .text,
+  #kapitel6 .text {
+    order: 2 !important;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  #kapitel5 .text h2,
+  #kapitel5 .text p,
+  #kapitel6 .text h2,
+  #kapitel6 .text p {
+    text-align: left;
+  }
+
+  .main-header {
+    height: 4.2rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-list {
+    gap: 2rem;
+  }
+
+  .nav-list li a {
+    font-size: 0.95rem;
+  }
+
+  /* SVG-Markierung ausblenden */
+  .svg-markierung {
+    display: none !important;
+  }
+}
